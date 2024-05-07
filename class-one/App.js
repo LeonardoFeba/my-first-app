@@ -1,12 +1,18 @@
-import { Text, View } from "react-native";
+// import ExampleStyles from "./src/class-style/StyledStyle";
 
-import { styles } from "./class/StyleExtern";
+// export default function App() {
+//   return <ExampleStyles />;
+// }
+
+import { StyleSheet, Platform, View, Text } from "react-native";
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: Platform.OS === "android" ? "green" : "black",
+  },
+});
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Mate</Text>
-      <Text style={styles.paragraph}>Com Sabão</Text>
-    </View>
-  );
+  return <View style={styles.container}></View>;
 }
